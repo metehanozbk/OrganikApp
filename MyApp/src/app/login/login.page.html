@@ -1,0 +1,27 @@
+<!-- src/app/login/login.page.html -->
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <!-- Logo Ekleme -->
+    <img src="assets/images/icon/noven_logo.png" alt="Logo" class="login-logo" />
+    
+    <!-- Giriş Formu -->
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()"> <!-- Reactive Form -->
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Giriş Yap</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label position="floating">Kullanıcı Adı</ion-label>
+            <ion-input type="text" formControlName="username"></ion-input> <!-- Form Kontrolü -->
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Şifre</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input> <!-- Form Kontrolü -->
+          </ion-item>
+          <ion-button expand="block" type="submit" class="ion-margin-top">Giriş</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </div>
+</ion-content>
