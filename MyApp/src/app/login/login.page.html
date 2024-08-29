@@ -2,22 +2,40 @@
 <ion-content class="ion-padding">
   <div class="login-container">
     <!-- Logo Ekleme -->
-    <img src="assets/images/icon/noven_logo.png" alt="Logo" class="login-logo" />
-    
+    <div class="login-logo-container">
+      <img src="assets/icon/noven_logo.png" alt="Logo" class="login-logo" />
+    </div>
+
     <!-- Giriş Formu -->
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()"> <!-- Reactive Form -->
       <ion-card>
         <ion-card-header>
           <ion-card-title>Giriş Yap</ion-card-title>
+       
+  <ion-content class="ion-padding">
+    <!-- Diğer login formu elementleriniz burada olabilir -->
+    
+    <ion-button expand="full" (click)="goToHome()">Next</ion-button>
+  </ion-content>
+       
+       
         </ion-card-header>
         <ion-card-content>
           <ion-item>
             <ion-label position="floating">Kullanıcı Adı</ion-label>
-            <ion-input type="text" formControlName="username"></ion-input> <!-- Form Kontrolü -->
+            <ion-input type="text" formControlName="username"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label position="floating">Şifre</ion-label>
-            <ion-input type="password" formControlName="password"></ion-input> <!-- Form Kontrolü -->
+            <ion-input
+              [type]="passwordType"
+              formControlName="password"
+            ></ion-input>
+            <ion-icon
+              [name]="passwordType === 'password' ? 'eye-off' : 'eye'"
+              slot="end"
+              (click)="togglePasswordVisibility()"
+            ></ion-icon>
           </ion-item>
           <ion-button expand="block" type="submit" class="ion-margin-top">Giriş</ion-button>
         </ion-card-content>

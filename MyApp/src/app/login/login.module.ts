@@ -1,11 +1,7 @@
-
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { LoginPageRoutingModule } from './login-routing.module';
-
 import { LoginPage } from './login.page';
 import { NgModule } from '@angular/core';
 
@@ -15,9 +11,10 @@ import { NgModule } from '@angular/core';
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    ReactiveFormsModule,
-    NgModule
+    ReactiveFormsModule
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage],
+  // Eğer hata çözülmezse CUSTOM_ELEMENTS_SCHEMA ekleyebilirsiniz
+  // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LoginPageModule {}

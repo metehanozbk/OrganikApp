@@ -1,36 +1,46 @@
+// src/app/login/login.page.ts
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertController } from '@ionic/angular'; // AlertController eklendi
-import { NgModule } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  loginForm: FormGroup; // Form nesnesi tanımlandı
+  loginForm: FormGroup;
+ 
+ 
+  passwordType: string = 'password'; // Şifreyi gizle
 
-  constructor(private fb: FormBuilder, private alertController: AlertController) { // AlertController eklendi
-    // Form Kontrolleri ve Doğrulama
+  constructor(private fb: FormBuilder, private alertController: AlertController,private router: Router) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
 
-  // Giriş yap butonu işlemi
+
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
+ 
+
+  togglePasswordVisibility() {
+    this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
+  }
+
   async onLogin() {
     if (this.loginForm.valid) {
-      // Kullanıcı adı ve şifre doğru
       console.log('Form geçerli, giriş yapılıyor...');
     } else {
-      // Uyarı mesajı göster
       const alert = await this.alertController.create({
         header: 'Uyarı',
         message: 'Lütfen kullanıcı adı ve şifre giriniz.',
         buttons: ['Tamam']
       });
-      await alert.present();
+       alert.present();
     }
   }
 }

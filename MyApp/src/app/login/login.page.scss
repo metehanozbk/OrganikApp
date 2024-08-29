@@ -1,24 +1,73 @@
 /* src/app/login/login.page.scss */
+
+ion-content {
+  --background: rgb(20, 60, 108); /* Arka plan rengini ayarla */
+}
+
 .login-container {
-    display: flex;
-    flex-direction: column; /* Dikey hizalama */
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    padding: 20px;
-  }
-  
-  .login-logo {
-    width: 150px; /* Logonun genişliği */
-    height: auto; /* Oranını koruyarak yüksekliği ayarlar */
-    margin-bottom: 20px; /* Logo ile form arasındaki boşluk */
-  }
-  
-  ion-card {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Ortalamak için */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* İçeriğin ortalanmasını sağlar */
+  padding: 16px; /* İçerik kenar boşluğu */
+}
+
+.login-logo-container {
+  background-color: #ffffff; /* Kutu arka plan rengini beyaz yap */
+  padding: 16px; /* İçerik kenar boşluğu */
+  border-radius: 8px; /* Köşeleri yuvarlat */
+  margin-bottom: 25px; /* Logo ile form arasına boşluk bırak */
+  display: flex; /* Logo'nun ortalanmasını sağla */
+  justify-content: center; /* Logo'yu yatayda ortala */
+  align-items: center; /* Logo'yu dikeyde ortala */
+}
+
+.login-logo {
+  max-width: 200px; /* Logo boyutunu ayarla */
+  display: block; /* Logo merkezlenir */
+  margin: auto; /* Ortalamak için */
+}
+
+ion-card {
+  width: 100%;
+  max-width: 400px; /* Maksimum genişlik */
+  background-color: rgb(245, 155, 39); /* Kutu arka plan rengini ayarla */
+  padding: 14px; /* İçerik kenar boşluğu */
+  border-radius: 12px; /* Köşeleri yuvarlat */
+}
+
+ion-card-header {
+  margin-bottom: 16px;
+}
+
+ion-card-title {
+  font-size: 1.5rem; /* Başlık boyutunu ayarla */
+  font-weight: bold;
+  text-align: center; /* Başlığı ortala */
+}
+
+ion-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+ion-label {
+  color: #ffffff; /* Label rengini beyaz yap */
+}
+
+ion-button {
+  margin-top: 16px;
+  --background: rgb(20, 60, 108); /* Butonun arka plan rengini ayarla */
+  --color: #ffffff; /* Buton üzerindeki yazı rengini ayarla */
+  --border-radius: 8px; /* Buton köşe yuvarlatma */
+}
+
+ion-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer; /* Tıklanabilirlik için */
+  font-size: 24px; /* Simgenin boyutunu ayarla */
+}
