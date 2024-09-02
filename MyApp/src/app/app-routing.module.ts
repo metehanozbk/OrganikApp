@@ -4,16 +4,16 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login', // Varsayılan yönlendirme login ekranına
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+    path: 'dash',
+    loadChildren: () => import('./dash/dash.module').then(m => m.DashModule)
   }
 ];
 

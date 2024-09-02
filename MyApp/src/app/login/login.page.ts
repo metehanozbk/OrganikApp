@@ -9,10 +9,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
+  
   loginForm: FormGroup;
  
  
   passwordType: string = 'password'; // Şifreyi gizle
+
 
   constructor(private fb: FormBuilder, private alertController: AlertController,private router: Router) {
     this.loginForm = this.fb.group({
@@ -22,8 +24,8 @@ export class LoginPage {
   }
 
 
-  goToHome() {
-    this.router.navigate(['/home']);
+  goToDash() {
+    this.router.navigate(['/dash']);
   }
  
 

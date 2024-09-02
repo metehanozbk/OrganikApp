@@ -1,5 +1,5 @@
 {
-  "name": "MyApp",
+  "name": "my-app",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -14,10 +14,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.0.0",
+    "@angular/cdk": "^18.2.2",
     "@angular/common": "^18.0.0",
     "@angular/compiler": "^18.0.0",
-    "@angular/core": "^18.0.0",
-    "@angular/forms": "^18.2.1",
+    "@angular/core": "^18.2.2",
+    "@angular/forms": "^18.2.2",
+    "@angular/material": "^18.2.2",
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
@@ -27,6 +29,8 @@
     "@capacitor/keyboard": "6.0.2",
     "@capacitor/status-bar": "6.0.1",
     "@ionic/angular": "^8.0.0",
+    "@swimlane/ngx-charts": "^20.5.0",
+    "d3": "^7.9.0",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -39,11 +43,14 @@
     "@angular-eslint/eslint-plugin-template": "^18.3.0",
     "@angular-eslint/schematics": "^18.0.0",
     "@angular-eslint/template-parser": "^18.0.0",
-    "@angular/cli": "^18.0.0",
-    "@angular/compiler-cli": "^18.0.0",
+    "@angular/cli": "^18.2.1",
+    "@angular/compiler-cli": "^18.2.2",
     "@angular/language-service": "^18.0.0",
     "@capacitor/cli": "^6.1.2",
     "@ionic/angular-toolkit": "^11.0.1",
+    "@types/d3-scale": "^4.0.8",
+    "@types/d3-selection": "^3.0.10",
+    "@types/d3-shape": "^3.1.6",
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
@@ -58,7 +65,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.4.0"
+    "typescript": "^5.5.4"
   },
   "description": "An Ionic project"
 }

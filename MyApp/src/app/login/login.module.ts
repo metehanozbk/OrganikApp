@@ -1,20 +1,20 @@
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { LoginPageRoutingModule } from './login-routing.module';
+import { LoginPageRoutingModule } from './login-routing.module'; // Buradaki isimlendirme doğru olmalı
 import { LoginPage } from './login.page';
-import { NgModule } from '@angular/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule, // ReactiveFormsModule'ü import ettik
     IonicModule,
-    LoginPageRoutingModule,
-    ReactiveFormsModule
+    LoginPageRoutingModule // Import ismini doğruladık
   ],
   declarations: [LoginPage],
-  // Eğer hata çözülmezse CUSTOM_ELEMENTS_SCHEMA ekleyebilirsiniz
+  // CUSTOM_ELEMENTS_SCHEMA genellikle gerekli değildir
   // schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class LoginPageModule {}
+export class LoginModule {} // Modül adını LoginPageModule olarak düzelttik
