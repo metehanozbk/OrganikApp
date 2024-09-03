@@ -1,6 +1,24 @@
 <ion-content>
   <div class="dashboard-container">
-    <ion-card>
+    <!-- Back Button -->
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="goToLogin()">
+            <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-title>Dashboard</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="toggleDashboard()">
+            <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <!-- Card and List -->
+    <ion-card [class.closed]="isDashboardClosed">
       <ion-card-header>
         <ion-card-title>Organik</ion-card-title>
       </ion-card-header>
@@ -15,7 +33,7 @@
 
           <!-- Genel Alt Başlıklar -->
           <div *ngIf="isGeneralExpanded" class="sub-items">
-            <ion-item button (click)="navigateToDashboard()">
+            <ion-item [routerLink]="['/cari/list']">
               <ion-icon slot="start" name="list-outline"></ion-icon>
               <ion-label>Cari Liste</ion-label>
             </ion-item>

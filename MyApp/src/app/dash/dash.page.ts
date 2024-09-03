@@ -11,17 +11,19 @@ export class DashPage implements OnInit {
   isGeneralExpanded: boolean = false;
   isFenIsleriExpanded: boolean = false;
   isFaturaExpanded: boolean = false;
-  isDashboardVisible: boolean = true;
+  isDashboardExpanded: boolean = true;  // Toggle için eklenen özellik
 
-  totalCustomers = 22;
-  totalSubscriptions = 0;
-  activeSubscriptions = 0;
-  passiveSubscriptions = 0;
+  totalCustomers: number = 22;
+  totalSubscriptions: number = 0;
+  activeSubscriptions: number = 0;
+  passiveSubscriptions: number = 0;
 
   chartData: { name: string; value: number }[] = [];
-  chartWidth = 320;
-  chartHeight = 250;
+  chartWidth: number = 320;
+  chartHeight: number = 250;
   colorScheme = { domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'] };
+
+  isDashboardClosed: boolean = false;  // Proper type
 
   constructor(private router: Router, private alertController: AlertController) {}
 
@@ -47,6 +49,10 @@ export class DashPage implements OnInit {
 
   toggleFatura() {
     this.isFaturaExpanded = !this.isFaturaExpanded;
+  }
+
+  toggleDashboard() {
+    this.isDashboardExpanded = !this.isDashboardExpanded;  // Toggle state değişimi
   }
 
   async showLisanssizUretimAlert() {

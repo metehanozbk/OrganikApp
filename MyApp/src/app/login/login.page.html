@@ -21,17 +21,21 @@
             <ion-input
               [type]="passwordType"
               formControlName="password"
+              maxlength="12" 
+              (input)="checkPasswordLength()"
             ></ion-input>
-            <ion-icon
-              [name]="passwordType === 'password' ? 'eye-off' : 'eye'"
-              slot="end"
-              (click)="togglePasswordVisibility()"
-            ></ion-icon>
+            <div class="password-eye-container" (click)="togglePasswordVisibility()">
+              <ion-icon
+                [name]="passwordType === 'password' ? 'eye-off' : 'eye'"
+                class="password-eye-icon"
+              ></ion-icon>
+            </div>
+            <div *ngIf="passwordLengthError" class="error-message">Şifre 12 karakterden fazla olamaz.</div>
           </ion-item>
           <!-- Next Butonu -->
           <ion-button expand="full" (click)="goToDash()" class="next-button">Next</ion-button>
           <!-- Giriş Butonu -->
-          <ion-button expand="block" type="submit" class="ion-margin-top">Giriş</ion-button>
+          <ion-button expand="block" type="submit" class="ion-margin-top" [disabled]="passwordLengthError">Giriş</ion-button>
         </ion-card-content>
       </ion-card>
     </form>

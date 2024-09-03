@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'dash',
     loadChildren: () => import('./dash/dash.module').then(m => m.DashModule)
+  },
+  {
+    path: 'cari',
+    loadChildren: () => import('./cari/cari.module').then(m => m.CariPageModule)
   }
 ];
 

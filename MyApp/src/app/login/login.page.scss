@@ -1,5 +1,3 @@
-/* src/app/login/login.page.scss */
-
 ion-content {
   --background: rgb(20, 60, 108); /* Arka plan rengini ayarla */
 }
@@ -63,11 +61,14 @@ ion-button {
   --border-radius: 8px; /* Buton köşe yuvarlatma */
 }
 
-ion-icon {
+.password-eye-container {
   position: absolute;
-  right: 10px;
   top: 50%;
+  right: 0; /* Move the icon to the extreme right side */
   transform: translateY(-50%);
-  cursor: pointer; /* Tıklanabilirlik için */
-  font-size: 24px; /* Simgenin boyutunu ayarla */
+  cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+}
+
+.password-eye-icon {
+  font-size: 26px; /* Increase the icon size to 24px */
 }
